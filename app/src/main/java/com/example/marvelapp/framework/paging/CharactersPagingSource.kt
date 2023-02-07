@@ -13,6 +13,7 @@ class CharactersPagingSource @Inject constructor(
     private val query: String
 ) : PagingSource<Int, Character>() {
 
+    @Suppress("TooGenericExceptionCaught")
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         return try {
             val offSet = params.key ?: 0
@@ -22,12 +23,12 @@ class CharactersPagingSource @Inject constructor(
             )
 
             if (query.isNotEmpty()) {
-                queries["nameStartWith"] = query
+                queries["nameStartsWith"] = query
             }
 
             val response = remoteDataSource.fetchCharacters(queries)
 
-            val responseOffset = response.data.offSet
+            val responseOffset = response.data.offset
             val totalCharacters = response.data.total
 
             LoadResult.Page(
