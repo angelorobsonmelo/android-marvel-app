@@ -8,13 +8,13 @@ class CharacterFactory {
         Hero.ABomb -> {
             Character(
                 name = "A-Bomb (HAS)",
-                imageUrl = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+                imageUrl = "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/e0/535fecbbb9784.jpg"
             )
         }
         Hero.ThreeDMan -> {
             Character(
                 name = "3-D Man",
-                imageUrl = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+                imageUrl = "https://i.annihil.us/u/prod/marvel/i/mg/c/e0/e0/535fecbbb9784.jpg"
             )
         }
     }
